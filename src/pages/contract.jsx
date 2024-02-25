@@ -3,15 +3,32 @@ import { Link } from "react-router-dom";
 
 export function ContactComponent() {
   return (
-    <div>
-      <div className="min-h-screen bg-gradient-to-tr from-[#60072c] via-[#120b2e] to-[#091498] px-8 md:px-14 lg:px-36 pb-10 pt-7">
-        <HeaderComponent />
-        <div className="grid grid-cols-1 md:grid-cols-2 p-10 items-center border-black-1px"></div>
-        <div className="hero-content flex-col justify-center p-5 bg-gradient-to-tr from-[#60072c] via-[#120b2e] to-[#091498] bg-blur-sm bg-opacity-50 p-8 md:p-14 lg:p-36 pb-10 pt-7">
-          <h1>Contact</h1>
+    <div className="min-h-screen bg-gradient-to-tr from-[#60072c] via-[#120b2e] to-[#091498] px-8 md:px-14 lg:px-36 pb-10 pt-7">
+      <HeaderComponent />
+      <div className="hero-content flex-col justify-center items-center p-5 bg-gradient-to-tr from-[#60072c] via-[#120b2e] to-[#091498] bg-blur-sm bg-opacity-50 rounded-lg shadow-lg mx-4 md:mx-10 lg:mx-20 my-10">
+        <h1 className="text-4xl font-bold text-white mb-6">Contact Me</h1>
+        <p className="text-xl text-gray-300 mb-4">
+          Feel free to reach out for collaborations or just a friendly hello 👋
+        </p>
+        <div className="space-y-4">
+          <p className="text-white">neung0511@gmail.com</p>
+          <p className="text-white">
+            LinkedIn:{" "}
+            <a
+              href="https://www.linkedin.com/in/chayanon-bharasarn-a516b8246/"
+              className="text-blue-300">
+              linkedin.com/in/chayanon-bharasarn
+            </a>
+          </p>
+          <p className="text-white">
+            Github:{" "}
+            <a href="https://github.com/Chayanon11" className="text-blue-300">
+              https://github.com/Chayanon11
+            </a>
+          </p>
         </div>
-        <div className="flex justify-center">
-          <Link to="/" className="btn btn-primary mt-4">
+        <div className="mt-8">
+          <Link to="/" className="btn btn-primary">
             Back to Home
           </Link>
         </div>
