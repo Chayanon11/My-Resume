@@ -29,6 +29,24 @@ export function PortfolioComponent() {
             </p>
           </a>
         </div>
+
+        <div className="project-card bg-white bg-opacity-20 rounded-lg shadow-lg p-5">
+          <a
+            href="https://product-price-calculator-chi.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer">
+            <img
+              src="/public/product-calculator-preview.png"
+              alt="Product Price Calculate"
+              className="rounded-lg mb-4"
+            />
+            <h2 className="text-lg font-bold">Product Price Calculate</h2>
+            <p className="text-md text-gray-300">
+              This project using HTML,CSS,JavaScript to calculate the price of
+              the product.
+            </p>
+          </a>
+        </div>
         {/* Add more projects here */}
       </div>
       <div className="flex justify-center mt-10">
