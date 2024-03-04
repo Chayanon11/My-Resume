@@ -2,6 +2,7 @@ import { HeaderComponent } from "../components/Header";
 import { Link } from "react-router-dom";
 import ProductCaluculateImage from "/public/product-calculator-preview.png";
 import Resume from "/public/ChayanonResume.pdf";
+import NeatlyHotelImage from "/public/neatly-hotel-preview.png";
 
 export function PortfolioComponent() {
   return (
@@ -32,6 +33,25 @@ export function PortfolioComponent() {
           </a>
         </div>
         {/* Add more projects here */}
+
+        <div className="project-card bg-white bg-opacity-20 rounded-lg shadow-lg p-5">
+          <a
+            href="https://grand-final-project-neatly-hotel-teal-ftfzx1x01.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer">
+            <img
+              src={NeatlyHotelImage}
+              alt="Product Price Calculate"
+              className="rounded-lg mb-4"
+            />
+            <h2 className="text-lg font-bold">Neatly Hotel</h2>
+            <p className="text-md text-gray-300">
+              The project is a hotel booking website that allows users to book a
+              room and view the hotel's information. The project is built with
+              Next.js, Tailwind CSS, Prisma and Supabase.
+            </p>
+          </a>
+        </div>
       </div>
       <div className="flex justify-center mt-10">
         <a
