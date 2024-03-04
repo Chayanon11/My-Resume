@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import TechStack1 from "/public/TechStackLogo1.png";
 import TechStack2 from "/public/TechStackLogo2.png";
 import TechStack3 from "/public/TechStackLogo3.png";
+import Resume from "/public/ChayanonResume.pdf";
 
 export function HireMeComponent() {
   return (
@@ -32,10 +33,10 @@ export function HireMeComponent() {
             <li>Professional experience in recruitment and customer service</li>
           </ul>
           <a
-            href="/public/ChayanonResume.pdf"
+            href={Resume}
             download="ChayanonResume.pdf"
-            className="btn btn-primary mt-4">
-            Download My Resume
+            className="btn btn-primary">
+            Download Resume
           </a>
         </div>
         <div className="lg:w-1/2 flex justify-around flex-wrap mt-8 lg:mt-0">

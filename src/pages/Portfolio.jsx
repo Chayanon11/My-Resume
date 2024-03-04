@@ -1,6 +1,7 @@
 import { HeaderComponent } from "../components/Header";
 import { Link } from "react-router-dom";
 import ProductCaluculateImage from "/public/product-calculator-preview.png";
+import Resume from "/public/ChayanonResume.pdf";
 
 export function PortfolioComponent() {
   return (
@@ -34,11 +35,12 @@ export function PortfolioComponent() {
       </div>
       <div className="flex justify-center mt-10">
         <a
-          href="/public/ChayanonResume.pdf"
+          href={Resume}
           download="ChayanonResume.pdf"
           className="btn btn-primary">
           Download Resume
         </a>
+
         <Link to="/" className="btn btn-primary ml-4">
           Back to Home
         </Link>
