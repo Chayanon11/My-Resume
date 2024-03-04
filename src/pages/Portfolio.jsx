@@ -36,7 +36,7 @@ export function PortfolioComponent() {
 
         <div className="project-card bg-white bg-opacity-20 rounded-lg shadow-lg p-5">
           <a
-            href="https://grand-final-project-neatly-hotel-teal-ftfzx1x01.vercel.app/"
+            href="https://grand-final-project-neatly-hotel-teal.vercel.app/"
             target="_blank"
             rel="noopener noreferrer">
             <img
