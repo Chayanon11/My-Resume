@@ -1,4 +1,5 @@
 import { HeaderComponent } from "../components/Header";
+import ChayanonImage2 from "/public/ChayanonImg2.jpg";
 import { Link } from "react-router-dom";
 
 export function AboutComponent() {
@@ -8,7 +9,7 @@ export function AboutComponent() {
 
       <div className="flex flex-col lg:flex-row justify-around items-center p-5 bg-gradient-to-tr from-[#60072c] via-[#120b2e] to-[#091498] bg-blur-sm bg-opacity-75 rounded-lg shadow-xl mx-4 md:mx-10 lg:mx-20 my-10">
         <img
-          src="https://daisyui.com/images/stock/photo-1635805737707-575885ab0820.jpg"
+          src={ChayanonImage2}
           alt="Chayanon Bharasarn"
           className="max-w-xs md:max-w-sm rounded-lg shadow-2xl mx-5 my-5 hover:scale-105 transition-transform duration-300"
         />

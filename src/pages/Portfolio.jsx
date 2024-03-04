@@ -13,24 +13,6 @@ export function PortfolioComponent() {
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 px-5">
-        {/* Example Project */}
-        {/* <div className="project-card bg-white bg-opacity-20 rounded-lg shadow-lg p-5">
-          <a
-            href="https://659abc93fd30079e5e90d69e--legendary-daifuku-b7f488.netlify.app/"
-            target="_blank"
-            rel="noopener noreferrer">
-            <img
-              src="/public/ProductList.png"
-              alt="Project Name"
-              className="rounded-lg mb-4"
-            />
-            <h2 className="text-lg font-bold">Project Name</h2>
-            <p className="text-md text-gray-300">
-              Brief project description...
-            </p>
-          </a>
-        </div> */}
-
         <div className="project-card bg-white bg-opacity-20 rounded-lg shadow-lg p-5">
           <a
             href="https://product-price-calculator-chi.vercel.app/"
