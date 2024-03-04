@@ -1,5 +1,8 @@
 import { HeaderComponent } from "../components/Header";
 import { Link } from "react-router-dom";
+import TechStack1 from "/public/TechStackLogo1.png";
+import TechStack2 from "/public/TechStackLogo2.png";
+import TechStack3 from "/public/TechStackLogo3.png";
 
 export function HireMeComponent() {
   return (
@@ -29,7 +32,7 @@ export function HireMeComponent() {
             <li>Professional experience in recruitment and customer service</li>
           </ul>
           <a
-            href="/src/assets/ChayanonResume.pdf"
+            href="/public/ChayanonResume.pdf"
             download="ChayanonResume.pdf"
             className="btn btn-primary mt-4">
             Download My Resume
@@ -38,7 +41,7 @@ export function HireMeComponent() {
         <div className="lg:w-1/2 flex justify-around flex-wrap mt-8 lg:mt-0">
           <div className="image-box bg-white p-4 rounded-lg shadow-lg m-2">
             <img
-              src="/path/to/your/image1.jpg"
+              src={TechStack1}
               alt="Skill Image 1"
               className="h-40 w-full object-cover rounded-lg"
             />
@@ -46,7 +49,7 @@ export function HireMeComponent() {
           </div>
           <div className="image-box bg-white p-4 rounded-lg shadow-lg m-2">
             <img
-              src="/path/to/your/image2.jpg"
+              src={TechStack3}
               alt="Skill Image 2"
               className="h-40 w-full object-cover rounded-lg"
             />
@@ -54,7 +57,7 @@ export function HireMeComponent() {
           </div>
           <div className="image-box bg-white p-4 rounded-lg shadow-lg m-2">
             <img
-              src="/path/to/your/image3.jpg"
+              src={TechStack2}
               alt="Skill Image 3"
               className="h-40 w-full object-cover rounded-lg"
             />

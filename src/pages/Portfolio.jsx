@@ -1,5 +1,6 @@
 import { HeaderComponent } from "../components/Header";
 import { Link } from "react-router-dom";
+import ProductCaluculateImage from "/public/product-calculator-preview.png";
 
 export function PortfolioComponent() {
   return (
@@ -13,7 +14,7 @@ export function PortfolioComponent() {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 px-5">
         {/* Example Project */}
-        <div className="project-card bg-white bg-opacity-20 rounded-lg shadow-lg p-5">
+        {/* <div className="project-card bg-white bg-opacity-20 rounded-lg shadow-lg p-5">
           <a
             href="https://659abc93fd30079e5e90d69e--legendary-daifuku-b7f488.netlify.app/"
             target="_blank"
@@ -28,7 +29,7 @@ export function PortfolioComponent() {
               Brief project description...
             </p>
           </a>
-        </div>
+        </div> */}
 
         <div className="project-card bg-white bg-opacity-20 rounded-lg shadow-lg p-5">
           <a
@@ -36,7 +37,7 @@ export function PortfolioComponent() {
             target="_blank"
             rel="noopener noreferrer">
             <img
-              src="/public/product-calculator-preview.png"
+              src={ProductCaluculateImage}
               alt="Product Price Calculate"
               className="rounded-lg mb-4"
             />

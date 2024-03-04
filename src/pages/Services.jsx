@@ -1,7 +1,28 @@
 import { HeaderComponent } from "../components/Header";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import Sport from "/public/MuayThai.jpg";
+import Music from "/public/bass-guitar.jpg";
+import Travel from "/public/Travel.jpg";
 
 export function ServicesComponent() {
+  const totalItems = 4;
+  const [activeItem, setActiveItem] = useState(1);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveItem((prevActiveItem) =>
+        prevActiveItem < totalItems ? prevActiveItem + 1 : 1
+      );
+    }, 100000); // Adjusted to change slide every 30 seconds
+
+    return () => clearInterval(interval); // Clean up on component unmount
+  }, []);
+
+  const handleNavigation = (itemNumber) => () => {
+    setActiveItem(itemNumber);
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-tr from-[#60072c] via-[#120b2e] to-[#091498] px-8 md:px-14 lg:px-36 pb-10 pt-7">
       <HeaderComponent />
@@ -14,14 +35,17 @@ export function ServicesComponent() {
         <div className="carousel w-full">
           {/* Item 1: Gaming */}
           <div
-            id="item1"
-            className="carousel-item w-full flex flex-col justify-center">
+            className={`carousel-item w-full flex flex-col justify-center ${
+              activeItem === 1 ? "block" : "hidden"
+            }`}>
             <img
               src="https://cdn.cloudflare.steamstatic.com/steam/apps/570/header.jpg?t=1703123157"
               className="w-1/2 object-cover h-48 mx-auto"
               alt="Dota 2"
             />
-            <h2 className="py-3 text-white text-bold text-center">Gaming</h2>
+            <h2 className="py-3 text-white text-bold text-center font-bold">
+              Gaming
+            </h2>
             <p className="py-6 text-white">
               I really enjoy gaming, especially Dota 2, because it's like a
               brain workout. It's not just fun; it makes me think fast and work
@@ -32,14 +56,17 @@ export function ServicesComponent() {
           </div>
           {/* Item 2: Music */}
           <div
-            id="item2"
-            className="carousel-item w-full flex flex-col justify-center">
+            className={`carousel-item w-full flex flex-col justify-center ${
+              activeItem === 2 ? "block" : "hidden"
+            }`}>
             <img
-              src="https://daisyui.com/images/stock/photo-1609621838510-5ad474b7d25d.jpg"
+              src={Music}
               className="w-1/2 object-cover h-48 mx-auto"
               alt="Music"
             />
-            <h2 className="py-3 text-white text-bold text-center">Music</h2>
+            <h2 className="py-3 text-white text-bold text-center font-bold">
+              Music
+            </h2>
             <p className="py-6 text-white">
               Music is a big part of my day, both while I'm working and when I'm
               chilling out. Listening to tunes helps me concentrate and get more
@@ -51,14 +78,17 @@ export function ServicesComponent() {
           </div>
           {/* Item 3: Sports - Basketball and Fitness */}
           <div
-            id="item3"
-            className="carousel-item w-full flex flex-col justify-center">
+            className={`carousel-item w-full flex flex-col justify-center ${
+              activeItem === 3 ? "block" : "hidden"
+            }`}>
             <img
-              src="https://daisyui.com/images/stock/photo-1414694762283-acccc27bca85.jpg"
+              src={Sport}
               className="w-1/2 object-cover h-48 mx-auto"
               alt="Basketball"
             />
-            <h2 className="py-3 text-white text-bold text-center">Sport</h2>
+            <h2 className="py-3 text-white text-bold text-center font-bold">
+              Sport
+            </h2>
             <p className="py-6 text-white">
               Sports are my go-to for taking a break from sitting at a computer.
               I love playing basketball and tennis because they're fun and keep
@@ -70,14 +100,15 @@ export function ServicesComponent() {
           </div>
           {/* Item 4: Technology */}
           <div
-            id="item4"
-            className="carousel-item w-full flex flex-col justify-center">
+            className={`carousel-item w-full flex flex-col justify-center ${
+              activeItem === 4 ? "block" : "hidden"
+            }`}>
             <img
-              src="https://daisyui.com/images/stock/photo-1665553365602-b2fb8e5d1707.jpg"
+              src={Travel}
               className="w-1/2 object-cover h-48 mx-auto"
               alt="Technology"
             />
-            <h2 className="py-3 text-white text-bold text-center">
+            <h2 className="py-3 text-white text-bold text-center font-bold">
               Tech & Travel
             </h2>
             <p className="py-6 text-white">
@@ -92,18 +123,19 @@ export function ServicesComponent() {
         </div>
 
         <div className="flex justify-center w-full py-2 gap-2">
-          <a href="#item1" className="btn btn-xs">
+          {/* Pass the item number directly to the handler */}
+          <button className="btn btn-xs" onClick={handleNavigation(1)}>
             1
-          </a>
-          <a href="#item2" className="btn btn-xs">
+          </button>
+          <button className="btn btn-xs" onClick={handleNavigation(2)}>
             2
-          </a>
-          <a href="#item3" className="btn btn-xs">
+          </button>
+          <button className="btn btn-xs" onClick={handleNavigation(3)}>
             3
-          </a>
-          <a href="#item4" className="btn btn-xs">
+          </button>
+          <button className="btn btn-xs" onClick={handleNavigation(4)}>
             4
-          </a>
+          </button>
         </div>
       </div>
       <div className="flex justify-center">

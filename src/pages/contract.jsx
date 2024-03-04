@@ -1,5 +1,6 @@
 import { HeaderComponent } from "../components/Header";
 import { Link } from "react-router-dom";
+import profileImg from "/public/ChayanonImg.jpg";
 
 export function ContactComponent() {
   return (
@@ -7,11 +8,18 @@ export function ContactComponent() {
       <HeaderComponent />
       <div className="hero-content flex-col justify-center items-center p-5 bg-gradient-to-tr from-[#60072c] via-[#120b2e] to-[#091498] bg-blur-sm bg-opacity-50 rounded-lg shadow-lg mx-4 md:mx-10 lg:mx-20 my-10">
         <h1 className="text-4xl font-bold text-white mb-6">Contact Me</h1>
+        <div className="image-box bg-white p-4 rounded-lg shadow-lg m-2">
+          <img
+            src={profileImg}
+            alt="Picture profile"
+            className="h-40 w-full object-cover rounded-lg m-0"
+          />
+        </div>
         <p className="text-xl text-gray-300 mb-4">
           Feel free to reach out for collaborations or just a friendly hello 👋
         </p>
         <div className="space-y-4">
-          <p className="text-white">neung0511@gmail.com</p>
+          <p className="text-white">Email: neung0511@gmail.com</p>
           <p className="text-white">
             LinkedIn:{" "}
             <a

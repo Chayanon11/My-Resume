@@ -13,39 +13,43 @@ export function AboutComponent() {
           className="max-w-xs md:max-w-sm rounded-lg shadow-2xl mx-5 my-5 hover:scale-105 transition-transform duration-300"
         />
         <div className="text-center md:text-left">
-          <h1 className="text-4xl font-bold text-red-500 mb-4">INTRODUCTION</h1>
-          <p className="text-white text-lg mb-4">
-            "Hello! I'm Chayanon, a passionate Full-Stack Developer. My journey
-            in technology has been marked by continuous learning and growth.
-            Here's a glimpse into my career path."
-          </p>
-          <h2 className="text-4xl font-bold text-red-500 mb-4">
-            My Career Path
-          </h2>
-          <div className="text-white text-lg space-y-4">
-            <p>
-              <span className="text-white text-lg mb-4">
-                Developer Trainee at TechUp Bangkok (Nov 2023 - Mar 2024):
-              </span>{" "}
-              Immersed myself in Full-Stack Development, mastering technologies
-              like React.js and Node.js.
+          <div className="text-center md:text-left">
+            <h1 className="text-4xl font-bold text-red-500 mb-4">
+              INTRODUCTION
+            </h1>
+            <p className="text-white text-lg mb-4">
+              "Hello! I'm Chayanon, a passionate Full-Stack Developer. My
+              journey in technology has been marked by continuous learning and
+              growth. Here's a glimpse into my career path."
             </p>
-            <p>
-              <span className="text-white text-lg mb-4">
-                Recruiter at Pantheon Corporation (Thailand) (Jul 2022 -
-                Present):
-              </span>{" "}
-              Enhanced team capabilities and utilized social media for talent
-              acquisition, blending my people skills with my tech background.
-            </p>
-            <p>
-              <span className="text-white text-lg mb-4">
-                Guest Service Agent at Maleewana Hotel & Resort (Feb 2022 - Jun
-                2022):
-              </span>{" "}
-              Delivered exceptional customer service, laying the groundwork for
-              my user-centric approach in tech.
-            </p>
+            <h2 className="text-4xl font-bold text-red-500 mb-4">
+              My Career Path
+            </h2>
+            <ul className="text-white text-lg space-y-4 list-disc list-inside">
+              <li>
+                <span className="mb-4">
+                  Developer Trainee at TechUp Bangkok (Nov 2023 - Mar 2024):
+                </span>
+                Immersed myself in Full-Stack Development, mastering
+                technologies like React.js and Node.js.
+              </li>
+              <li>
+                <span className="mb-4">
+                  Recruiter at Pantheon Corporation (Thailand) (Jul 2022 -
+                  Present):
+                </span>
+                Enhanced team capabilities and utilized social media for talent
+                acquisition, blending my people skills with my tech background.
+              </li>
+              <li>
+                <span className="mb-4">
+                  Guest Service Agent at Maleewana Hotel & Resort (Feb 2022 -
+                  Jun 2022):
+                </span>
+                Delivered exceptional customer service, laying the groundwork
+                for my user-centric approach in tech.
+              </li>
+            </ul>
           </div>
         </div>
       </div>
