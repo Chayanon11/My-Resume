@@ -1,9 +1,9 @@
 import { HeaderComponent } from "../components/Header";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import Sport from "/public/MuayThai.jpg";
-import Music from "/public/bass-guitar.jpg";
-import Travel from "/public/Travel.jpg";
+import Sport from "../assets/MuayThai.jpg";
+import Music from "../assets/bass-guitar.jpg";
+import Travel from "../assets/Travel.jpg";
 
 export function ServicesComponent() {
   const totalItems = 4;

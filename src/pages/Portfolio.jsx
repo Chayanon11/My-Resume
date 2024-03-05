@@ -1,8 +1,8 @@
 import { HeaderComponent } from "../components/Header";
 import { Link } from "react-router-dom";
-import ProductCaluculateImage from "/public/product-calculator-preview.png";
-import Resume from "/public/ChayanonResume.pdf";
-import NeatlyHotelImage from "/public/neatly-hotel-preview.png";
+import ProductCaluculateImage from "../assets/product-calculator-preview.png";
+import Resume from "../assets/ChayanonResume.pdf";
+import NeatlyHotelImage from "../assets/neatly-hotel-preview.png";
 
 export function PortfolioComponent() {
   return (

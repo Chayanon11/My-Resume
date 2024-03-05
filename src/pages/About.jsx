@@ -1,5 +1,5 @@
 import { HeaderComponent } from "../components/Header";
-import ChayanonImage2 from "/public/ChayanonImg2.jpg";
+import ChayanonImage2 from "../assets/ChayanonImg2.jpg";
 import { Link } from "react-router-dom";
 
 export function AboutComponent() {

@@ -1,6 +1,6 @@
 import { HeaderComponent } from "../components/Header";
 import { Link } from "react-router-dom";
-import profileImg from "/public/ChayanonImg.jpg";
+import profileImg from "../assets/ChayanonImg.jpg";
 
 export function ContactComponent() {
   return (
