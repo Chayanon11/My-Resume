@@ -4,6 +4,7 @@ import ProductCaluculateImage from "../assets/product-calculator-preview.png";
 import Resume from "../assets/ChayanonResume.pdf";
 import NeatlyHotelImage from "../assets/neatly-hotel-preview.png";
 import todoListImage from "../assets/todoList.png";
+import GoogleSearchImage from "../assets/GoogleSearch.png";
 
 export function PortfolioComponent() {
   return (
@@ -69,6 +70,25 @@ export function PortfolioComponent() {
               This project is a Todo list website built using Next.js, Tailwind
               CSS, Prisma, and MongoDB. It enables users to create, update, and
               delete their tasks efficiently.
+            </p>
+          </a>
+        </div>
+
+        <div className="project-card bg-white bg-opacity-20 rounded-lg shadow-lg p-5">
+          <a
+            href="https://grand-final-project-neatly-hotel-teal.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer">
+            <img
+              src={GoogleSearchImage}
+              alt="Product Price Calculate"
+              className="rounded-lg mb-4"
+            />
+            <h2 className="text-lg font-bold">Google </h2>
+            <p className="text-md text-gray-300">
+              The project is a Google Search for website and images that allows
+              users to search for website and image by google Google API. The
+              project is built with Next.js, Tailwind CSS.
             </p>
           </a>
         </div>
