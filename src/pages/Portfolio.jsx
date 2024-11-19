@@ -5,6 +5,8 @@ import Resume from "../assets/ChayanonResume.pdf";
 import NeatlyHotelImage from "../assets/neatly-hotel-preview.png";
 import todoListImage from "../assets/todoList.png";
 import GoogleSearchImage from "../assets/GoogleSearch.png";
+import TaxiImage from "../assets/taxi.png";
+import xImage from "../assets/x-clone.png";
 
 export function PortfolioComponent() {
   return (
@@ -16,21 +18,22 @@ export function PortfolioComponent() {
           A showcase of my latest work
         </p>
       </div>
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 px-5">
         <div className="project-card bg-white bg-opacity-20 rounded-lg shadow-lg p-5">
           <a
-            href="https://product-price-calculator-chi.vercel.app/"
+            href="https://taxi-booking-nextjs-nu.vercel.app/"
             target="_blank"
             rel="noopener noreferrer">
             <img
-              src={ProductCaluculateImage}
+              src={TaxiImage}
               alt="Product Price Calculate"
               className="rounded-lg mb-4"
             />
-            <h2 className="text-lg font-bold">Product Price Calculate</h2>
+            <h2 className="text-lg font-bold">Taxi-booking-nextjs</h2>
             <p className="text-md text-gray-300">
-              This project using HTML,CSS,JavaScript to calculate the price of
-              the product.
+              This project using React NextJs 14 Taxi Booking App : NextJs 14,
+              Tailwind Css, Typescript, Mapbox
             </p>
           </a>
         </div>
@@ -76,6 +79,25 @@ export function PortfolioComponent() {
 
         <div className="project-card bg-white bg-opacity-20 rounded-lg shadow-lg p-5">
           <a
+            href="https://x-next-two.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer">
+            <img
+              src={xImage}
+              alt="Product Price Calculate"
+              className="rounded-lg mb-4"
+            />
+            <h2 className="text-lg font-bold">X-clone-Next.JS </h2>
+            <p className="text-md text-gray-300">
+              This project demonstrates full-stack capabilities, including
+              authentication, image handling, and real-time interactions ,
+              modern web application.
+            </p>
+          </a>
+        </div>
+
+        <div className="project-card bg-white bg-opacity-20 rounded-lg shadow-lg p-5">
+          <a
             href="https://google-next-pied-mu.vercel.app/"
             target="_blank"
             rel="noopener noreferrer">
@@ -84,11 +106,29 @@ export function PortfolioComponent() {
               alt="Product Price Calculate"
               className="rounded-lg mb-4"
             />
-            <h2 className="text-lg font-bold">Google </h2>
+            <h2 className="text-lg font-bold">Google-clone </h2>
             <p className="text-md text-gray-300">
               The project is a Google Search for website and images that allows
               users to search for website and image by google Google API. The
               project is built with Next.js, Tailwind CSS.
+            </p>
+          </a>
+        </div>
+
+        <div className="project-card bg-white bg-opacity-20 rounded-lg shadow-lg p-5">
+          <a
+            href="https://product-price-calculator-chi.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer">
+            <img
+              src={ProductCaluculateImage}
+              alt="Product Price Calculate"
+              className="rounded-lg mb-4"
+            />
+            <h2 className="text-lg font-bold">Product Price Calculate</h2>
+            <p className="text-md text-gray-300">
+              This project using HTML,CSS,JavaScript to calculate the price of
+              the product.
             </p>
           </a>
         </div>
