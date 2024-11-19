@@ -1,7 +1,7 @@
 import { HeaderComponent } from "../components/Header";
 import { Link } from "react-router-dom";
 import ProductCaluculateImage from "../assets/product-calculator-preview.png";
-import Resume from "../assets/ChayanonResume.pdf";
+import Resume from "../assets/CHAYANON_BHARASARN_CV.pdf";
 import NeatlyHotelImage from "../assets/neatly-hotel-preview.png";
 import todoListImage from "../assets/todoList.png";
 import GoogleSearchImage from "../assets/GoogleSearch.png";
