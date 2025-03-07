@@ -27,10 +27,16 @@ export function HireMeComponent() {
             Skills & Experiences
           </h2>
           <ul className="text-lg text-gray-300 list-disc list-inside mb-4">
-            <li>React.js, Node.js, MongoDB, PostgreSQL</li>
+            <li>ReactJs, NextJs , Vue , NodeJs </li>
+            <li>HTML5 , CSS3 , Tailwind CSS , Bootstrap</li>
+            <li>ExpressJs , NestJs </li>
+            <li>JavaScript , TypeScript , SQL , NoSQL</li>
+            <li>Docker , Git , Postman PostgreSQL ,MongoDB</li>
             <li>Front-end and back-end web development</li>
             <li>Database design and management</li>
-            <li>Professional experience in recruitment and customer service</li>
+            <li>RESTful API development</li>
+            <li>Git version control and deployment</li>
+            <li>Experience with Agile methodologies</li>
           </ul>
           <a
             href={Resume}
