@@ -7,6 +7,7 @@ import todoListImage from "../assets/todoList.png";
 import GoogleSearchImage from "../assets/GoogleSearch.png";
 import TaxiImage from "../assets/taxi.png";
 import xImage from "../assets/x-clone.png";
+import PosImage from "../assets/POS-Cashier.png"
 
 export function PortfolioComponent() {
   return (
@@ -41,6 +42,28 @@ export function PortfolioComponent() {
 
         <div className="project-card bg-white bg-opacity-20 rounded-lg shadow-lg p-5">
           <a
+            href="https://cozy-naiad-830c4d.netlify.app"
+            target="_blank"
+            rel="noopener noreferrer">
+            <img
+              src={PosImage}
+              alt="Product Price Calculate"
+              className="rounded-lg mb-4"
+            />
+            <h2 className="text-lg font-bold">POS APP</h2>
+            <p className="text-md text-gray-300">
+              POS Cashier for Browser And Desktop App : This project using
+              NextJs 14, Tailwind Css, Typescript , Electron that can be used on
+              both browser and desktop. The user can login and use the POS
+              system to manage their products and sales.
+              <br />
+              Login: neung
+            </p>
+          </a>
+        </div>
+
+        <div className="project-card bg-white bg-opacity-20 rounded-lg shadow-lg p-5">
+          <a
             href="https://grand-final-project-neatly-hotel-teal.vercel.app/"
             target="_blank"
             rel="noopener noreferrer">
@@ -54,6 +77,9 @@ export function PortfolioComponent() {
               The project is a hotel booking website that allows users to book a
               room and view the hotel's information. The project is built with
               Next.js, Tailwind CSS, Prisma and Supabase.
+              <br />
+              username : admin123
+              password : 123456
             </p>
           </a>
         </div>
