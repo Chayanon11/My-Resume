@@ -8,6 +8,7 @@ import GoogleSearchImage from "../assets/GoogleSearch.png";
 import TaxiImage from "../assets/taxi.png";
 import xImage from "../assets/x-clone.png";
 import PosImage from "../assets/POS-Cashier.png"
+import MapTools from "../assets/map-tools-drawning.png"
 
 export function PortfolioComponent() {
   return (
@@ -21,24 +22,30 @@ export function PortfolioComponent() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 px-5">
+        {/* Add more projects here */}
+
         <div className="project-card bg-white bg-opacity-20 rounded-lg shadow-lg p-5">
           <a
-            href="https://taxi-booking-nextjs-nu.vercel.app/"
+            href="https://zippy-marshmallow-995683.netlify.app/"
             target="_blank"
             rel="noopener noreferrer">
             <img
-              src={TaxiImage}
+              src={MapTools}
               alt="Product Price Calculate"
               className="rounded-lg mb-4"
             />
-            <h2 className="text-lg font-bold">Taxi-booking-nextjs</h2>
+            <h2 className="text-lg font-bold">Vue3 Polygon Mapping Tool</h2>
             <p className="text-md text-gray-300">
-              This project using React NextJs 14 Taxi Booking App : NextJs 14,
-              Tailwind Css, Typescript, Mapbox
+              A versatile map tool built with Vue 3 that enables users to draw,
+              edit, and manage polygons on both 2D and 3D maps. The application
+              uses Leaflet for 2D mapping with OpenStreetMap data and Cesium for
+              immersive 3D visualization. All polygon data is stored locally in
+              the browser's localStorage, eliminating the need for a backend
+              server. Users can customize polygon properties, export data as
+              GeoJSON, and switch between multiple base map styles.
             </p>
           </a>
         </div>
-        {/* Add more projects here */}
 
         <div className="project-card bg-white bg-opacity-20 rounded-lg shadow-lg p-5">
           <a
@@ -64,6 +71,24 @@ export function PortfolioComponent() {
 
         <div className="project-card bg-white bg-opacity-20 rounded-lg shadow-lg p-5">
           <a
+            href="https://taxi-booking-nextjs-nu.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer">
+            <img
+              src={TaxiImage}
+              alt="Product Price Calculate"
+              className="rounded-lg mb-4"
+            />
+            <h2 className="text-lg font-bold">Taxi-booking-nextjs</h2>
+            <p className="text-md text-gray-300">
+              This project using React NextJs 14 Taxi Booking App : NextJs 14,
+              Tailwind Css, Typescript, Mapbox
+            </p>
+          </a>
+        </div>
+
+        <div className="project-card bg-white bg-opacity-20 rounded-lg shadow-lg p-5">
+          <a
             href="https://grand-final-project-neatly-hotel-teal.vercel.app/"
             target="_blank"
             rel="noopener noreferrer">
@@ -78,8 +103,7 @@ export function PortfolioComponent() {
               room and view the hotel's information. The project is built with
               Next.js, Tailwind CSS, Prisma and Supabase.
               <br />
-              username : admin123
-              password : 123456
+              username : admin123 password : 123456
             </p>
           </a>
         </div>
