@@ -57,7 +57,7 @@ export function PortfolioComponent() {
               both browser and desktop. The user can login and use the POS
               system to manage their products and sales.
               <br />
-              Login: neung
+              Login: 1111
             </p>
           </a>
         </div>
