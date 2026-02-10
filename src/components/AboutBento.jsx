@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { FiMapPin, FiGithub, FiLinkedin, FiMail, FiMusic, FiDownload, FiMonitor, FiGlobe, FiTarget, FiChevronRight } from "react-icons/fi";
+import { FiMapPin, FiGithub, FiLinkedin, FiMail, FiMusic, FiDownload, FiMonitor, FiGlobe, FiTarget, FiChevronRight, FiX } from "react-icons/fi";
 import { Modal } from "./Modal";
 import Resume from "../assets/CHAYANON_BHARASARN_CV.pdf";
-import ChayanonImage2 from "../assets/ChayanonImg2.jpg";
+import ChayanonImage2 from "../assets/my-pho.jpg";
 
 // Images for interests
 import Sport from "../assets/MuayThai.jpg";
@@ -25,35 +25,82 @@ const Card = ({ children, className, onClick }) => (
 const CAREER_DATA = [
   {
     role: "Full Stack Developer",
+    company: "Betimes Solutions",
+    period: "Jun 2025 - Present",
+    projects: [
+      {
+        name: "MAILMERGE API",
+        highlights: [
+          "Built a Mail Merge API with .NET 8 that turns JSON data into Word documents automatically",
+          "Created a flexible config system so templates can be easily customized without code changes",
+          "Added cool features like repeating sections, HTML content, and image embedding into documents",
+          "Built export tools for XML, CSV, Excel, and JSON - whatever format the client needs",
+          "Made it handle large documents smoothly without eating up memory",
+          "Set up Docker containers and automated deployment scripts for easy releases",
+          "Created clean API endpoints with full Swagger docs so other devs can integrate easily",
+        ]
+      },
+      {
+        name: "ERP-AUDIT MANAGEMENT SYSTEM",
+        highlights: [
+          "Working on a Government Audit System using Angular 16 and .NET 6",
+          "Built a document engine that generates official reports with digital signatures",
+          "Set up approval workflows where auditors and directors can review and sign off on reports",
+          "Created interactive dashboards for tracking audits in real-time",
+          "Optimized slow database queries to make the app faster",
+          "Fixed date formatting to work with Thai Buddhist calendar (this was trickier than expected!)",
+          "Squashed some nasty bugs where documents would fail when multiple users edited at once",
+          "Implemented secure login with OAuth2 and role-based permissions",
+        ]
+      }
+    ]
+  },
+  {
+    role: "Full Stack Developer",
     company: "TDM Thai Digital Map",
-    period: "June 2024 - Present",
-    highlights: [
-      "Maintained and enhanced Bangkok Fire and Rescue Department's internal GIS system using Vue.js, Node.js/Express, and PostgreSQL",
-      "Implemented interactive mapping features utilizing Leaflet.js, OpenStreetMap, and DeeMap",
-      "Optimized geospatial database queries and spatial data management in PostgreSQL",
-      "Developed real-time emergency response tracking and visualization features",
-      "Engineered RESTful APIs for efficient geospatial data transactions",
-      "Integrated third-party mapping services and maintained system documentation",
-      "Maintained 95% test coverage across critical GIS components",
+    period: "Jun 2024 - Jun 2025",
+    projects: [
+      {
+        name: "Bangkok Fire & Rescue GIS System",
+        highlights: [
+          "Built and maintained a map-based system for Bangkok Fire Department using Vue.js and Node.js",
+          "Added interactive maps with Leaflet.js so dispatchers can see incidents in real-time",
+          "Made the map queries faster by optimizing how we store and fetch location data",
+          "Built features to track emergency vehicles and show them on the map live",
+          "Created APIs to handle all the map and location data",
+          "Connected with external mapping services and kept everything well-documented",
+          "Kept test coverage at 95% to make sure nothing breaks",
+        ]
+      }
     ]
   },
   {
     role: "Developer Trainee",
     company: "TechUp Bangkok",
     period: "Nov 2023 - Mar 2024",
-    highlights: [
-      "Developed full stack applications emphasizing modern JavaScript frameworks",
-      "Created responsive, mobile-first interfaces using Tailwind CSS",
-      "Implemented secure authentication and authorization systems",
-      "Deployed microservices architecture solutions and maintained documentation",
+    projects: [
+      {
+        name: "Full Stack Training Program",
+        highlights: [
+          "Learned to build web apps with React, Vue, and other modern frameworks",
+          "Got hands-on with responsive design using Tailwind CSS",
+          "Built login systems with proper security (auth tokens, password hashing, etc.)",
+          "Worked on microservices projects and learned how to document code properly",
+        ]
+      }
     ]
   },
   {
     role: "Guest Service Agent",
     company: "Maleewana Hotel & Resort",
     period: "Feb 2022 - Jun 2022",
-    highlights: [
-      "Delivered exceptional customer service, laying the groundwork for my user-centric approach in tech.",
+    projects: [
+      {
+        name: "Hospitality Operations",
+        highlights: [
+          "Worked in customer service - this taught me how to think from the user's perspective, which helps a lot in building better software!",
+        ]
+      }
     ]
   },
 ];
@@ -95,6 +142,132 @@ const INTERESTS = [
   }
 ];
 
+// Career Modal - Custom styled to match ProjectModal
+const CareerModal = ({ isOpen, onClose }) => {
+  // Lock body scroll when modal is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+      return () => {
+        document.body.style.overflow = '';
+      };
+    }
+  }, [isOpen]);
+
+  if (!isOpen) return null;
+
+  return (
+    <div
+      className="fixed inset-0 z-[100] overflow-hidden"
+      onWheel={(e) => e.stopPropagation()}
+    >
+      {/* Backdrop - pointer-events-none so it doesn't capture scroll */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        className="absolute inset-0 bg-black/80 backdrop-blur-sm pointer-events-none"
+      />
+
+      {/* Click catcher for closing */}
+      <div
+        className="absolute inset-0"
+        onClick={onClose}
+      />
+
+      {/* Modal Container - Centers the modal */}
+      <div className="absolute inset-0 flex items-center justify-center p-2 sm:p-4 pointer-events-none overflow-hidden">
+        <motion.div
+          initial={{ scale: 0.95, opacity: 0, y: 20 }}
+          animate={{ scale: 1, opacity: 1, y: 0 }}
+          exit={{ scale: 0.95, opacity: 0, y: 20 }}
+          transition={{ type: "spring", damping: 25, stiffness: 300 }}
+          className="relative bg-obsidian border border-glass-border rounded-2xl sm:rounded-3xl max-w-4xl w-full max-h-[95vh] sm:max-h-[90vh] shadow-2xl flex flex-col pointer-events-auto"
+          onClick={(e) => e.stopPropagation()}
+        >
+          {/* Header Image Area */}
+          <div className="relative h-32 sm:h-40 md:h-56 flex-shrink-0 overflow-hidden rounded-t-2xl sm:rounded-t-3xl">
+            {/* Abstract Tech Background */}
+            <div className="absolute inset-0 bg-gradient-to-br from-cyber-cyan/20 via-electric-violet/20 to-obsidian" />
+            <div className="absolute inset-0 opacity-20"
+                 style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(255,255,255,0.15) 1px, transparent 0)', backgroundSize: '24px 24px' }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/60 to-transparent" />
+
+            {/* Close Button */}
+            <button
+              onClick={onClose}
+              className="absolute top-3 right-3 sm:top-4 sm:right-4 p-1.5 sm:p-2 bg-black/50 hover:bg-black/70 rounded-full transition-colors z-20 group"
+            >
+              <FiX className="text-white text-lg sm:text-xl group-hover:rotate-90 transition-transform duration-300" />
+            </button>
+
+            {/* Title Overlay */}
+            <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6 z-10">
+              <p className="text-xs sm:text-sm font-space uppercase tracking-widest mb-1 sm:mb-2 text-cyber-cyan">
+                Professional Journey
+              </p>
+              <h2 className="text-2xl sm:text-3xl md:text-5xl font-syne font-bold text-white">Career Path</h2>
+            </div>
+          </div>
+
+          {/* Content - Scrollable */}
+          <div className="flex-1 min-h-0 overflow-y-auto p-4 sm:p-6 md:p-8">
+          <div className="relative">
+            {/* Vertical Timeline Line - Always on the left */}
+            <div className="absolute left-3 sm:left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-cyber-cyan/50 via-cyber-cyan/30 to-transparent" />
+
+            <div className="space-y-6 sm:space-y-8">
+              {CAREER_DATA.map((job, i) => (
+                <div key={i} className="relative pl-10 sm:pl-12">
+
+                  {/* Timeline Dot - Always on the left */}
+                  <div className="absolute left-0 top-0 flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-glass-border bg-obsidian shadow z-10">
+                    <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-cyber-cyan rounded-full animate-pulse shadow-[0_0_10px_#00F0FF]" />
+                  </div>
+
+                  {/* Content Card - Full width */}
+                  <div className="p-4 sm:p-6 bg-black/90 border border-glass-border rounded-xl hover:border-cyber-cyan transition-all duration-300 shadow-lg backdrop-blur-md hover:shadow-[0_0_15px_rgba(0,240,255,0.2)] hover:bg-glass/30">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-3 sm:mb-4 gap-2 border-b border-white/5 pb-3">
+                      <div className="min-w-0 flex-1">
+                        <h3 className="font-bold text-lg sm:text-xl text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400 font-syne">{job.role}</h3>
+                        <div className="text-cyber-cyan text-xs sm:text-sm mt-1 font-space">{job.company}</div>
+                      </div>
+                      <span className="text-[10px] sm:text-xs font-space bg-cyber-cyan/10 text-cyber-cyan px-2 sm:px-3 py-1 rounded-full whitespace-nowrap w-fit border border-cyber-cyan/20 flex-shrink-0">
+                        {job.period}
+                      </span>
+                    </div>
+
+                    <div className="space-y-3 sm:space-y-4">
+                      {job.projects.map((project, pIdx) => (
+                        <div key={pIdx} className="bg-black/40 rounded-lg p-3 sm:p-4 border border-white/5 hover:border-white/10 transition-colors">
+                          <h4 className="font-bold text-white text-xs sm:text-sm mb-2 sm:mb-3 flex items-center gap-2">
+                            <span className="w-1.5 h-1.5 bg-electric-violet rounded-full shadow-[0_0_8px_#7000FF] flex-shrink-0"></span>
+                            <span>{project.name}</span>
+                          </h4>
+                          <ul className="space-y-1.5 sm:space-y-2">
+                            {project.highlights.map((item, idx) => (
+                              <li key={idx} className="flex items-start gap-2 text-secondary-text text-xs sm:text-sm leading-relaxed">
+                                <span className="text-white/20 mt-1.5 text-[6px] flex-shrink-0">●</span>
+                                <span>{item}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </div>
+  );
+};
+
 export const AboutBento = () => {
   const [careerModalOpen, setCareerModalOpen] = useState(false);
   const [interestsModalOpen, setInterestsModalOpen] = useState(false);
@@ -115,7 +288,7 @@ export const AboutBento = () => {
           </Card>
 
           {/* 2. Bio & Intro (Large) */}
-          <Card className="md:col-span-2 md:row-span-2 flex flex-col justify-between min-h-[250px]">
+          <Card className="md:col-span-2 md:row-span-2 flex flex-col gap-4 min-h-[250px]">
             <div>
               <h2 className="text-sm uppercase tracking-widest text-secondary-text mb-2">Introduction</h2>
               <h1 className="text-2xl md:text-4xl font-bold font-syne leading-tight">
@@ -123,9 +296,9 @@ export const AboutBento = () => {
               </h1>
             </div>
             <p className="text-secondary-text text-sm md:text-base">
-              Passionate about blending educational experiences with technology to create intuitive web applications.
-              My journey in technology has been marked by continuous learning and growth.
-              Currently building GIS systems for Bangkok Fire & Rescue Department.
+              I love turning ideas into real products that people actually enjoy using.
+              Started my dev journey in 2023 and haven't stopped learning since.
+              Right now I'm building document automation tools and enterprise systems.
             </p>
           </Card>
 
@@ -189,7 +362,7 @@ export const AboutBento = () => {
                     <span className="text-cyber-cyan/70">{job.period}</span>
                   </div>
                   <p className="text-xs text-secondary-text/60 mt-1 line-clamp-1">
-                    {job.highlights[0]}
+                    {job.projects.map(p => p.name).join(' • ')}
                   </p>
                 </div>
               ))}
@@ -265,30 +438,35 @@ export const AboutBento = () => {
             -webkit-box-orient: vertical;
             overflow: hidden;
           }
+          .modal-scrollbar {
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            touch-action: pan-y;
+            scroll-behavior: smooth;
+          }
+          .modal-scrollbar::-webkit-scrollbar {
+            width: 6px;
+          }
+          .modal-scrollbar::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 3px;
+          }
+          .modal-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(0, 240, 255, 0.3);
+            border-radius: 3px;
+          }
+          .modal-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 240, 255, 0.5);
+          }
+          @media (hover: none) {
+            .modal-scrollbar::-webkit-scrollbar {
+              width: 3px;
+            }
+          }
         `}</style>
       </div>
 
-      {/* Career Details Modal */}
-      <Modal isOpen={careerModalOpen} onClose={() => setCareerModalOpen(false)} title="My Career Path">
-        <div className="space-y-8">
-          {CAREER_DATA.map((job, i) => (
-            <div key={i} className="border-l-4 border-cyber-cyan pl-6">
-              <h3 className="font-bold text-xl text-white font-syne">{job.role}</h3>
-              <div className="text-cyber-cyan text-sm mb-3">
-                {job.company} • {job.period}
-              </div>
-              <ul className="space-y-2">
-                {job.highlights.map((item, idx) => (
-                  <li key={idx} className="flex items-start gap-3 text-secondary-text">
-                    <span className="text-cyber-cyan mt-1.5">•</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </Modal>
+      <CareerModal isOpen={careerModalOpen} onClose={() => setCareerModalOpen(false)} />
 
       {/* Interests Modal */}
       <Modal isOpen={interestsModalOpen} onClose={() => setInterestsModalOpen(false)} title="My Interests">

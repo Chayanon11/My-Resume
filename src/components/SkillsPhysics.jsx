@@ -106,7 +106,7 @@ export const SkillsPhysics = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-primary-text text-5xl md:text-8xl font-syne font-black uppercase mb-2 opacity-10 tracking-tighter">
+          <h2 className="text-white text-5xl md:text-8xl font-syne font-black uppercase mb-2 opacity-40 tracking-tighter">
             My Toolkit
           </h2>
           <p className="text-secondary-text font-space text-sm opacity-50">

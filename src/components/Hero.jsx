@@ -94,8 +94,8 @@ const FluidMesh = () => {
 // 3. Main Export
 export const HeroComponent = () => {
   return (
-    <div className="h-screen w-full relative bg-obsidian overflow-hidden">
-      <Canvas camera={{ position: [0, 0, 1] }}>
+    <div className="h-screen w-full relative bg-obsidian overflow-hidden isolate" style={{ zIndex: 0 }}>
+      <Canvas camera={{ position: [0, 0, 1] }} style={{ position: 'relative', zIndex: 1 }}>
         <FluidMesh />
         <Html fullscreen className="pointer-events-none flex flex-col justify-center items-center z-10 w-full h-full">
           <div className="text-center">
