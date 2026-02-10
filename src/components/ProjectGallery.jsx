@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { motion, useTransform, useScroll } from 'framer-motion';
 import { FiExternalLink, FiX } from 'react-icons/fi';
 
@@ -244,14 +244,23 @@ export const ProjectGallery = () => {
     target: targetRef,
   });
 
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const checkDesktop = () => setIsDesktop(window.innerWidth >= 768);
+    checkDesktop();
+    window.addEventListener('resize', checkDesktop);
+    return () => window.removeEventListener('resize', checkDesktop);
+  }, []);
+
   // Extended scroll for 8 projects
   const x = useTransform(scrollYProgress, [0, 1], ["1%", "-85%"]);
 
   return (
     <>
-      <section ref={targetRef} className="relative h-[400vh] bg-obsidian">
-        <div className="sticky top-0 flex h-screen items-center overflow-hidden">
-          <motion.div style={{ x }} className="flex gap-8 md:gap-12 px-8 md:px-24">
+      <section ref={targetRef} className="relative h-auto md:h-[400vh] bg-obsidian py-20 md:py-0">
+        <div className="relative md:sticky md:top-0 flex h-auto md:h-screen items-center overflow-x-auto md:overflow-hidden no-scrollbar">
+          <motion.div style={{ x: isDesktop ? x : 0 }} className="flex gap-8 md:gap-12 px-8 md:px-24">
             {/* Header */}
             <div className="flex flex-col justify-center min-w-[300px] md:min-w-[400px]">
               <h2 className="text-5xl md:text-8xl font-syne font-black text-transparent stroke-text" style={{ WebkitTextStroke: '2px #333' }}>

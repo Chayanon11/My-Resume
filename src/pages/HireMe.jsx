@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import TechStack1 from "../assets/TechStackLogo1.png";
 import TechStack2 from "../assets/TechStackLogo2.png";
 import TechStack3 from "../assets/TechStackLogo3.png";
-import Resume from "../assets/CHAYANON_BHARASARN_CV_1.pdf";
+import Resume from "../assets/CHAYANON_CV.pdf";
 
 export function HireMeComponent() {
   return (

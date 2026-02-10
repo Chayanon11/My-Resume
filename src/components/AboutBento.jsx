@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FiMapPin, FiGithub, FiLinkedin, FiMail, FiMusic, FiDownload, FiMonitor, FiGlobe, FiTarget, FiChevronRight, FiX } from "react-icons/fi";
 import { Modal } from "./Modal";
-import Resume from "../assets/CHAYANON_BHARASARN_CV_1.pdf";
+import Resume from "../assets/CHAYANON_CV.pdf";
 import ChayanonImage2 from "../assets/my-pho.jpg";
 
 // Images for interests
