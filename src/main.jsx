@@ -2,6 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
+import "@fontsource/syne";
+import "@fontsource/space-grotesk";
 import { HomePage } from "./pages/Home.jsx";
 import { AboutComponent } from "./pages/About.jsx";
 import { HeaderComponent } from "./components/Header.jsx";
