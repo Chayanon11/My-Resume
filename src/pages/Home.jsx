@@ -84,7 +84,7 @@ export function HomePage() {
         </div>
 
         <p className="text-gray-600 font-space text-sm mt-16">
-          © 2024 Chayanon Bharasarn. Built with React & Three.js
+          © 2026 Chayanon Bharasarn.
         </p>
       </div>
     </div>
