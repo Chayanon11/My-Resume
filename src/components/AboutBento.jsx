@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { FiMapPin, FiGithub, FiLinkedin, FiMail, FiMusic, FiDownload, FiMonitor, FiGlobe, FiTarget, FiChevronRight, FiX } from "react-icons/fi";
 import { Modal } from "./Modal";
 import Resume from "../assets/CHAYANON_CV.pdf";
-import ChayanonImage2 from "../assets/my-pho.jpg";
+import ChayanonImage2 from "../assets/my-photo-1.jpg";
 
 // Images for interests
 import Sport from "../assets/MuayThai.jpg";
